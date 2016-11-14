@@ -9,4 +9,6 @@ git push -u origin master
 git status
 
 git add * or gir add folder/*
-git
+git pull https://github.com:username/the_repo branchname
+
+
