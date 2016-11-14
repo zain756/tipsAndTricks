@@ -11,4 +11,11 @@ git status
 git add * or gir add folder/*
 git pull https://github.com:username/the_repo branchname
 
+//check head branch
+git log --online --decorate
 
+//change branch
+git checkout  branchname
+
+//create branch
+git branch  branchname
