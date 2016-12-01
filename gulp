@@ -1,2 +1,37 @@
 npm install jshint gulp-jshint jshint-stylish gulp-imagemin gulp-concat gulp-uglify gulp-minify-css gulp-usemin gulp-cache gulp-changed gulp-rev gulp-rename gulp-notify  browser-sync del --save-dev
 
+//This is a sample to connect php server
+//
+//
+var gulp = require('gulp'),
+    connect = require('gulp-connect-php'),
+    browserSync = require('browser-sync');
+ 
+gulp.task('connect-sync', function() {
+  connect.server({
+     
+	  
+	  bin: 'D:/wamp64/bin/php/php7.0.0/php.exe',
+      ini: 'D:wamp64/bin/php/php7.0.0/php.ini',
+	  base: 'public'
+  }, 
+  function (){
+    browserSync({
+      proxy: '127.0.0.1:8000'
+	  
+	  
+    });
+  });
+ 
+  gulp.watch('public/index.php').on('change', browserSync.reload);
+});
+/*
+gulp.task('connect', function() {
+    connect.server();
+});
+*/
+gulp.task('default', [ 'connect-sync']);
+
+// 
+//
+//
