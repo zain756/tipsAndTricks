@@ -1,1 +1,6 @@
 
+curl -GET http://www.zainitservices.comli.com/ > "C:\Users\zain.ulabdeen.SOFTECH\desktop\test.txt"
+
+curl -GET http://www.zainitservices.comli.com/searchuniversity.php?country=pak > "C:\Users\zain.ulabdeen.SOFTECH\desktop\test.txt"
+
+curl -GET -d country=pak http://www.zainitservices.comli.com/searchuniversity.php > "C:\Users\zain.ulabdeen.SOFTECH\desktop\test.txt"
