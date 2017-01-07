@@ -7,3 +7,26 @@ http://www.tecmint.com/install-lamp-on-ubuntu-16-10/
 http://www.tecmint.com/learn-mysql-mariadb-for-beginners/
 
 https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-16-04
+
+//apache commands start stop
+https://www.cyberciti.biz/faq/ubuntu-linux-start-restart-stop-apache-web-server/
+
+commands
+//install apache
+sudo apt-get update
+sudo apt-get install apache2
+
+//install mysql
+sudo apt-get install mysql-server
+
+//install php
+sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql
+
+//check status
+sudo systemctl status apache2.service mysql.service
+//start 
+sudo systemctl start apache2.service mysql.service
+//stop
+sudo systemctl stop apache2.service mysql.service
+//restart
+sudo systemctl stop apache2.service mysql.service
