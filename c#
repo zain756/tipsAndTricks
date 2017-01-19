@@ -1,0 +1,50 @@
+http://liliankasem.com/2015/10/17/api-calls-using-httpclient-and-deserializing-json-in-c/
+
+https://msdn.microsoft.com/en-us/library/mt674882.aspx
+
+http://rextester.com/XPKY90132
+
+
+
+
+
+
+
+//async
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System.Net.Http;
+using System.Threading.Tasks;
+using System.Threading;
+
+namespace Rextester
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            
+            Test();
+            Console.WriteLine("FIRST"); //prints sooner than pages
+            Thread.Sleep(5000); //just to get the output from Test()
+        }
+        
+        static async void Test()
+        {
+            var r = await DownloadPage("http://www.zainitservices.comli.com/searchuniversity.php?country=pak");
+            Console.WriteLine(r);
+        }
+        
+        static async Task<string> DownloadPage(string url)
+        {
+             HttpClient client = new HttpClient();
+            
+             string urlContents = await client.GetStringAsync(url);  
+             return urlContents;
+            
+        }
+    }
+}
